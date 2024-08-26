@@ -1,7 +1,7 @@
 # PrimeOrbit AWS Access Setup
 
 ## Permissions Overview
-Please refer to the permissions overview here: [Permission Overview](permissions_overview).
+Please refer to the permissions overview here: [Permission Overview](permissions-overview.md).
 
 ## Setup Scenario
 This document covers the instrcutions to setup the **An individual account with _existing_ CUR report (Single/Multi Accounts, UsingKeySecret)** scenario.
