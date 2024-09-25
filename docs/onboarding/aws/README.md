@@ -20,7 +20,7 @@ The CUR (Cost and Usage Report) setup should only be performed in the root accou
 3. **Retrieve Access Keys**: Once the setup execution succeeds, copy the Access Key & Secret from the `Outputs`. These credentials should be securely shared with PrimeOrbit.
 
 **CloudFormation Stack URL for root account**:
-https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://prime-orbit-setup.s3.amazonaws.com/v2/aws_individual_new_cur_setup_v2.yml&stackName=POKeySecretSetupV2m1
+https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://prime-orbit-setup.s3.amazonaws.com/v2/aws-individual-new-cur-setup-v2.yml&stackName=POKeySecretSetupV2m1
 
 ## Member Account Setup Instructions
 1. **Run Setup in Each Account**: The quick-setup link below needs to be executed in each AWS member account where access is to be provided.
@@ -30,4 +30,4 @@ https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/s
 4. **Retrieve Access Keys**: Once the setup execution succeeds, copy the Access Key & Secret from the `Outputs`. These credentials should be securely shared with PrimeOrbit.
 
 **CloudFormation Stack URL for member accounts**:
-https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/create/review?templateURL=https://prime-orbit-setup.s3.amazonaws.com/v2/aws-individual-exising-cur-setup-v2.yml&stackName=POKeySecretSetupV2m1&param_ExistingS3BucketForCUR=pocurreport
+https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/create/review?templateURL=https://prime-orbit-setup.s3.amazonaws.com/v2/aws-individual-exising-cur-setup-v2.yml&stackName=POKeySecretSetupV2m1
