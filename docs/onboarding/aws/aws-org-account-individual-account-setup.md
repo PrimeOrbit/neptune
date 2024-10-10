@@ -1,6 +1,9 @@
-# PrimeOrbit AWS Setup
- 
-To integrate PrimeOrbit with your AWS accounts, you will need to complete two types of setup:
+# PrimeOrbit AWS Setup Organisations Member Accounts Individually
+
+To integrate PrimeOrbit with your AWS organization accounts but prefer to set up each account individually, you will need to complete two types of setup.
+
+This setup generates an **Access Key** and **Secret Key**  which must be securely shared with PrimeOrbit to complete the integration. 
+
 
 1. **Root Account Setup**: This is required for setting up the Cost and Usage Report (CUR) in the root account of your AWS organization. This setup involves creating the CUR and configuring the necessary IAM permissions.
 

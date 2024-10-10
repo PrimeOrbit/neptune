@@ -10,5 +10,8 @@ If you're integrating PrimeOrbit with multiple accounts under AWS Organizations,
 ### 2. [AWS Individual Account Setup](./aws-individual-account-setup.md)
 For users who are integrating PrimeOrbit with individual AWS accounts, this guide will walk you through the setup.
 
+### 3. [AWS Setup Organisation Accounts Individually](./aws-org-account-individual-account-setup.md)
+To integrate PrimeOrbit with your AWS organization accounts but prefer to set up each account individually. This setup utilises an **Access Key** and **Secret Key** for the integration.
+
 ## Additional Information
 - [PrimeOrbit Permissions Overview](./permissions-overview.md): Understand the permissions required by PrimeOrbit for integration with your AWS environment.
