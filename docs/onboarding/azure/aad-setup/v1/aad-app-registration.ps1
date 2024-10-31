@@ -37,7 +37,7 @@ while (-not $tenantIdValid) {
 # Redirect URI and validation
 $redirectUriValid = $false
 while (-not $redirectUriValid) {
-    $redirectUri = "Read-Host -Prompt "Please enter the Redirect URI (e.g., "https://yoursite.primeorbit.io/login)"
+    $redirectUri = Read-Host -Prompt "Please enter the Redirect URI (e.g., 'https://yoursite.primeorbit.io/login')"
     
     # HTTPS check
     try {
