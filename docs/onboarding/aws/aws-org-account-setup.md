@@ -24,3 +24,6 @@ To understand the permissions PrimeOrbit obtains, please refer to the permission
 [Deploy Stack](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://prime-orbit-setup.s3.amazonaws.com/v2/aws-org-root-new-cur-setup-v2.yml&param_TargetAccountId=115525691254&stackName=POKeylessSetupV2R1)
 
 5. **Verify Setup**: After the stack has been deployed, ensure that the setup has completed successfully by checking the status of the execution in the AWS CloudFormation console.
+
+6. **Sharing the following information with PrimeOrbit**: Your Organization Root and the management account where the cost reports are generated.
+![alt text](images/ou-screenshot.png)
