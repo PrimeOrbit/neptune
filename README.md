@@ -8,8 +8,8 @@ Each guide contains step-by-step instructions to configure permissions, roles, a
 Follow this guide to configure the necessary roles and permissions to your AWS environment for PrimeOrbit.
 
 
-- [Azure Onboarding Guide](#) (Coming soon)
-The Azure guide will be available shortly with detailed instructions for connecting Microsoft Azure with PrimeOrbit.
+- [Azure Onboarding Guide](docs/onboarding/azure/README.md)
+The Azure guide with detailed instructions for connecting Microsoft Azure with PrimeOrbit.
 
 
 More cloud providers and configurations will be supported soon, so stay tuned!
