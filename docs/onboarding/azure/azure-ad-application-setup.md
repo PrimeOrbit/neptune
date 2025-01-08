@@ -19,7 +19,7 @@ A powershell script to automate the Azure AD application registeration.
 
 - **Important**: Keep your **Tenant ID** and **Redirect URI** ready before running the script. You will be prompted to provide these details during the execution:
   - **Tenant ID**: A valid Azure AD Tenant ID.
-  - **Redirect URI**: A valid HTTPS redirect URL for your application (e.g., `https://yoursite.primeorbit.io/redirect`).
+  - **Redirect URI**: A valid HTTPS redirect URL for your application (e.g., `https://yoursite.primeorbit.io/login`).
 
 ## How to Use the Script
 
@@ -35,7 +35,7 @@ A powershell script to automate the Azure AD application registeration.
 
 4. **Provide Inputs**: During the script execution, you'll be prompted to provide the following inputs:
     - **Azure AD Tenant ID**: You must provide your tenant ID.
-    - **Redirect URI**: A valid HTTPS redirect URL for the application (e.g., `https://yoursite.primeorbit.io/redirect`).
+    - **Redirect URI**: A valid HTTPS redirect URL for the application (e.g., `https://yoursite.primeorbit.io/login`).
 
 5. **Wait for Completion**: The script will register the app, assign permissions, and output the details
  
