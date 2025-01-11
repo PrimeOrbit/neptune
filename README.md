@@ -11,18 +11,17 @@ Follow this guide to configure the necessary roles and permissions to your AWS e
 - [Azure Onboarding Guide](docs/onboarding/azure/README.md)
 The Azure guide with detailed instructions for connecting Microsoft Azure with PrimeOrbit.
 
-- Once the setup is complete, please share the information as requested in the link.
+
+- [GCP Onboarding Guide](docs/onboarding/gcp/README.md)
+The GCP guide with detailed instructions for connecting Google Cloud with PrimeOrbit.
+
+Once the setup is complete, please share the information as requested in the links above.
 
 Important note regarding permissions:
 -	The system is configured for read-only access
 -	Explicit deny rules are in place for additional security
 
 For cost and usage analysis, we'll need:
--	A ticket opened with AWS Support to share last 2 years of cost and usage reports. Once the AWS setup goes through I’ll share the details to share with AWS and Azure support folks.
--	A separate ticket with Azure Support to provide relevant information
-Once the setup goes through I’ll share the details to share with AWS and Azure support folks.
-
-
-More cloud providers and configurations will be supported soon, so stay tuned!
+-	A ticket opened with AWS/Azure/GCP Support to share last 2 years of cost and usage reports. Once the AWS setup goes through PrimeOrbit can share the details to be further shared with AWS/Azure/GCP support.
 
 
