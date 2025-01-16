@@ -141,13 +141,13 @@ PrimeOrbit needs <u>READ ONLY</u> access to System data (no private logs or prop
         <br>![alt text](./images/image-1.png)
 1. Click `SAVE`
 
-## Collect all the required information with PrimeOrbit
+## Collect the information below to share with PrimeOrbit
 1. If you've picked Option#1 above, then share `JSON Key file` for the Service Account
     <br>Share the downloaded JSON file created for the Service Account.
 1. Share `Billing Account ID`    
 1. Share `Project ID hosting BigQuery Dataset`    
 1. Share `BigQuery Dataset Name` 
-1. Share `Fully Qualified Insights Table Name` 
+1. Share `Fully Qualified Cost Report Table Name` 
 1. Share `Fully Qualified Insights Table Name for Pricing` 
 1. Share `Fully Qualified Insights Table Name for Recommendations` 
 

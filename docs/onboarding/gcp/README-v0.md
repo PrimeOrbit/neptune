@@ -155,13 +155,13 @@ First, you must configure a Data Transfer for Recommender data in the Google Clo
     - Service Account: `<po-service-principal>`
     - Role: `BigQuery Data Viewer`
 
-## Collect all the required information with PrimeOrbit
+## Collect the information below to share with PrimeOrbit
 1. Share `JSON Key file` for the Service Account
     <br>Share the downloaded JSON file created for the Service Account.
 1. Share `Billing Account ID`    
 1. Share `Project ID hosting BigQuery Dataset`    
 1. Share `BigQuery Dataset Name` 
-1. Share `Fully Qualified Insights Table Name` 
+1. Share `Fully Qualified Cost Report Table Name`   
 1. Share `Fully Qualified Insights Table Name for Pricing` 
 1. Share `Fully Qualified Insights Table Name for Recommendations` 
 
