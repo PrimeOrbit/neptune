@@ -1,0 +1,7 @@
+# Permissions needed in the billing account only
+  - 'billing.accounts.get'
+  - 'billing.accounts.getSpendingInformation'
+  - 'billing.finOpsBenchmarkInformation.get'
+  - 'billing.finOpsHealthInformation.get'
+  - 'recommender.costRecommendations.summarizeAll'
+  - 'recommender.costRecommendations.listAll'

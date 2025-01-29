@@ -10,39 +10,28 @@ Ensure that you have the following permissions to enable and configure the expor
 2. <b>BigQuery User role for the Cloud project</b> that contains the BigQuery dataset that will be used to store the Cloud Billing data
 3. <b>IAM Admin role</b> to add the service account ID as a member in your GCP project.
 
+## Useful Links
+
+1. <b>Cloud Shell:</b> Click [here](https://console.cloud.google.com/cloudshell) to open the Cloud Shell.
+2. <b>Roles, Permissions and Descriptions</b> Search for a permission or role [here](https://cloud.google.com/iam/docs/permissions-reference#search)
+
+
 ## Setup GCP Service Account
 Integrating your GCP projects with PrimeOrbit requires you to authorize PrimeOrbit to fetch billing, cost, recommendations, monitoring data from your GCP. You can choose between two authorization methods: Managed Service Account and Unmanaged Service Account.
 
-### OPTION-1 Preferred: Use dedicated PrimeOrbit Service Account
-PrimeOrbit manages a specific Google service account per Customer; you do not need to create it or manage the associated private key. Just add the service account ID as a member with viewing permissions in your project. If your organization uses a domain restriction constraint, you will have to update the policy to allow the PrimeOrbit domain, `C03gkjq09`.
+### Use dedicated PrimeOrbit Service Account Per Customer (Recommended)
+PrimeOrbit manages a specific GCP service account per Customer; you do not need to create it or manage the associated private key. Just add the service account ID as a member with the right permissions in your project. If your organization uses a domain restriction constraint, you will have to update the policy to allow the PrimeOrbit domain, `C03gkjq09`.
 
-Please check with the PrimeOrbit to get the service account ID for your organization.
+PLEASE CHECK WITH </b>PRIMEORBIT</b> TO GET THE DEDICATED SERVICE ACCOUNT ID FOR YOUR ORGANIZATION.
 
-### OPTION-2 Create Unmanaged Service Account with roles assigned
-1. Log into the GCP console.
-
-2. Search for <b>Service Accounts</b>, and click <b>Create New</b>.<br>
--![alt text](./images/image-13.png)
-
-3. Enter the Service Account details:
-    - Service Account Name: `primeorbitserviceaccount`
-    - Service Account ID: `primeorbitserviceaccount`
-    - Description: `primeorbitserviceaccount Access`
-    - ![alt text](./images/image-15.png)
-    
-3. Click `CREATE AND CONTINUE`
-4. Click `Done`
-1. Click on the three dots next to the service account and choose Manage Keys
-    ![alt text](./images/image-17.png)
-    1. Click `ADD KEY` --> `Create new key` and choose JSON <br>
-        - Click `CREATE` and save the JSON file. You will need to share this file with PrimeOrbit.
-        <br>![alt text](./images/image-18.png)
+For example:
+![alt text](images/image-serviceaccount.png)
 
 ## Create Detailed Usage Cost Dataset
 Please follow the [instructions](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-setup) from Google to get it done.
 The first step is to configure your Cloud Billing Data Exports in the Google Cloud console. You may already have completed these steps for other purposes, but please confirm the steps here match what you have previously set up.
 
-**Google recommends creating a dedicated project for billing data.
+### "Google recommends creating a dedicated project for billing data."
 
 1. select <b>Launch GCP console</b>
 2. In the Google Cloud account, select <b>Billing --> Billing Export</b>.<br>
@@ -111,7 +100,7 @@ First, you must configure a Data Transfer for Recommender data in the Google Clo
         - Service Account: For Option#1 above, enter the service account email as shared by PrimeOrbit.         
         - Service Account: For Option#2 above, enter the service account email as shared by PrimeOrbit. 
             - `primeorbitserviceaccount` - the service account that was created earlier
-    - Roles: `BigQuery Data Viewer`, `BigQuery Job User`, `BigQuery Read Session User`, `BigQuery Data Viewer`, `BigQuery Data Transfer Service Agent`
+    - Roles: `BigQuery Data Viewer`, `BigQuery Job User`, `BigQuery Read Session User`, `BigQuery Data Transfer Service Agent`
     ![alt text](./images/image-9.png)
 7. Click `Save`
 8. Repeat the same process for `insights_export` table.
@@ -127,10 +116,11 @@ If this is the first time you've setup Cloud Billing data exports in BigQuery, p
 ## Grant Access to PrimeOrbit 
 PrimeOrbit needs <u>READ ONLY</u> access to System data (no private logs or proprietary data) query Projects, Resources, Metadata, Utilization data, and Labels. In this needs be set at the Organization level (preferred) or each individual project level. 
 1. Log into the GCP Console.
-1. Change Scope to 'Organization' or 'Project' level.
-1. Go to `IAM` --> `ALLOW`<br>
-![alt text](./images/image.png)
-1. Click on `+ GRANT ACCESS`<br>
+1. Change Scope to 'Organization' level.
+1. Go to `IAM` --> `Roles` or [click here](https://console.cloud.google.com/iam-admin/roles)<br>
+![alt text](image.png)
+1. Make sure you are in the right organization level.
+1. Click on `+ CREATE ROLE`<br>
 1. Enter the 'Service Account' email address shared by PrimeOrbit or the one created above.
 1. Enter each of the following roles:
         - <b>roles/viewer</b>
