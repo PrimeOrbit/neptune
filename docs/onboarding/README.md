@@ -4,15 +4,15 @@ Welcome to the PrimeOrbit cloud onboarding guide! This guide helps you configure
 ## Supported Cloud Providers
 Each guide contains step-by-step instructions to configure permissions, roles, and access settings needed for PrimeOrbit on the selected cloud provider.
 
-- [AWS Onboarding Guide](docs/onboarding/aws/README.md)
+- [AWS Onboarding Guide](./aws/README.md)
 Follow this guide to configure the necessary roles and permissions to your AWS environment for PrimeOrbit.
 
 
-- [Azure Onboarding Guide](docs/onboarding/azure/README.md)
+- [Azure Onboarding Guide](./azure/README.md)
 The Azure guide with detailed instructions for connecting Microsoft Azure with PrimeOrbit.
 
 
-- [GCP Onboarding Guide](docs/onboarding/gcp/README.md)
+- [GCP Onboarding Guide](./gcp/README.md)
 The GCP guide with detailed instructions for connecting Google Cloud with PrimeOrbit.
 
 Once the setup is complete, please share the information as requested in the links above.
