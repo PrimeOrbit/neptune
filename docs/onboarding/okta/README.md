@@ -23,26 +23,41 @@ information between your Okta application and PrimeOrbit.
 
 01. Log in to Okta and navigate to *Admin Console > Applications >
     Applications*.
+
 02. Select *Create App* Integration.
+
 03. Select *OIDC - OpenID Connect* as the *Sign-in* method.
+
 04. Select *Single-Page Application*.
+
 05. Click *Next*.
+
 06. Enter a name (e.g., PrimeOrbit) in the App integration *name* field.
+
 07. Optionally, upload a logo via the *Logo* field.
     [PrimeOrbit logo is available here](TODO).
+
 08. In the *Grant Type* field, select *Advanced*, and then check the box for
     *Implicit (hybrid)*.
+
 09. In the *Sign-in redirect URIs* field, enter
     `https://<id>.primeorbit.io/login` where `<id>` is your company id in
     PrimeOrbit.
+
+    ![Tab to configure sign-in redirects](images/sign-in.png)
+
 10. Click *Save* to create the app integration, then select *Edit* to configure
     additional options.
-11. In the \*Client Credentials section of the *General* tab, ensure the *Proof
+
+11. In the *Client Credentials* section of the *General* tab, ensure the *Proof
     Key for Code Exchange (PKCE)* box is checked.
+
+    ![General tab](images/general-tab.png)
+
 12. Copy the Client ID.
+
 13. Keep the Okta settings page open as you will need to finish configuring it
-    in a later step. ![alt text](images/image.png)
-    ![alt text](images/image1.png)
+    in a later step.
 
 ## Data to share with PrimeOrbit
 
