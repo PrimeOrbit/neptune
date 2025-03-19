@@ -33,10 +33,6 @@ information between your Okta application and PrimeOrbit.
 05. Click *Next*.
 
 06. Enter a name (e.g., PrimeOrbit) in the App integration *name* field.
-
-07. Optionally, upload a logo via the *Logo* field.
-    [PrimeOrbit logo is available here](TODO).
-
 08. In the *Grant Type* field, select *Advanced*, and then check the box for
     *Implicit (hybrid)*.
 
