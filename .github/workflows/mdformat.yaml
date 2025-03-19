@@ -30,7 +30,7 @@ jobs:
             xargs)" >> "$GITHUB_OUTPUT"
 
       - name: Set up Python environment
-        if: steps.changed-files.outputs.any_changed == 'true'
+        if: ${{ steps.changed-files.outputs.md_files }}
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
