@@ -1,0 +1,49 @@
+name: Mdformat Formatter
+
+on: 
+  push:
+    branches:
+      - main
+    paths:
+      - '**.md'
+  pull_request: 
+    branches:
+      - main
+    paths:
+      - '**.md'
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        run: |
+          echo "md_files=$(git diff --name-only --diff-filter=ACMRT \
+            ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | \
+            grep .md$ | \
+            xargs)" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Python environment
+        if: ${{ steps.changed-files.outputs.md_files }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        if: ${{ steps.changed-files.outputs.md_files }}
+        run: |
+          pip install pipx
+          pipx install mdformat
+          pipx inject mdformat mdformat-gfm
+
+      - name: Run Mdformat 
+        if: ${{ steps.changed-files.outputs.md_files }}
+        run: >
+          mdformat --check --wrap 80 --number \
+            ${{ steps.changed-files.outputs.md_files }}
