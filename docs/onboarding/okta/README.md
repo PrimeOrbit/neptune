@@ -109,4 +109,4 @@ support resources.
 ## Support/Feedback
 
 If you encounter any issues or have feedback on the integration process, please
-[contact our support team](TODO).
+[contact our support team](mailto:support@primeorbit.com).
