@@ -48,7 +48,7 @@ The first step is to configure your Cloud Billing Data Exports in the Google Clo
     * Make sure you select the right project.<br>
     ![alt text](./images/image-29.png)
 8. Click `Create Dataset`.
-9. Select the dataset that was just created. 
+9. Select the dataset that was just created.
 9. Then, click `Save`
 <br>![alt text](./images/image-27.png)
 
@@ -81,7 +81,7 @@ First, you must configure a Data Transfer for Recommender data in the Google Clo
 
 ## Configure BiqQuery Tables
 1. Sign in to the Google Cloud console and go to the [BigQuery](https://console.cloud.google.com/bigquery) page.
-2. Scroll down to your project <br> 
+2. Scroll down to your project <br>
 ![alt text](./images/image-33.png)
 3. Identify the table name where the billing export is available. In your BigQuery dataset, the table is named `gcp_billing_export_v1_*`.
 4. Once the table is accessible, make note of its fully qualified name for use in later steps. This name consists of is the Project ID, Dataset and Table name of the table you configured.
@@ -97,8 +97,8 @@ First, you must configure a Data Transfer for Recommender data in the Google Clo
 ![alt text](./images/image-8.png)
 6. Add the service account and role, then click `[SAVE]`
     - Enter the following details:
-        - Service Account: For Option#1 above, enter the service account email as shared by PrimeOrbit.         
-        - Service Account: For Option#2 above, enter the service account email as shared by PrimeOrbit. 
+        - Service Account: For Option#1 above, enter the service account email as shared by PrimeOrbit.
+        - Service Account: For Option#2 above, enter the service account email as shared by PrimeOrbit.
             - `primeorbitserviceaccount` - the service account that was created earlier
     - Roles: `BigQuery Data Viewer`, `BigQuery Job User`, `BigQuery Read Session User`, `BigQuery Data Transfer Service Agent`
     ![alt text](./images/image-9.png)
@@ -113,8 +113,8 @@ First time setting up Cloud Billing exports?
 If this is the first time you've setup Cloud Billing data exports in BigQuery, please be aware that it can take up to 24-48 hours for your export table to appear. It does not appear until GCP does it's first data drop, which can take a day or two. You can not continue the rest of the connection process until the table has been created.
 ```
 
-## Grant Access to PrimeOrbit 
-PrimeOrbit needs <u>READ ONLY</u> access to System data (no private logs or proprietary data) query Projects, Resources, Metadata, Utilization data, and Labels. In this needs be set at the Organization level (preferred) or each individual project level. 
+## Grant Access to PrimeOrbit
+PrimeOrbit needs <u>READ ONLY</u> access to System data (no private logs or proprietary data) query Projects, Resources, Metadata, Utilization data, and Labels. In this needs be set at the Organization level (preferred) or each individual project level.
 1. Log into the GCP Console.
 1. Change Scope to 'Organization' level.
 1. Go to `IAM` --> `Roles` or [click here](https://console.cloud.google.com/iam-admin/roles)<br>
@@ -134,12 +134,12 @@ PrimeOrbit needs <u>READ ONLY</u> access to System data (no private logs or prop
 ## Collect the information below to share with PrimeOrbit
 1. If you've picked Option#1 above, then share `JSON Key file` for the Service Account
     <br>Share the downloaded JSON file created for the Service Account.
-1. Share `Billing Account ID`    
-1. Share `Project ID hosting BigQuery Dataset`    
-1. Share `BigQuery Dataset Name` 
-1. Share `Fully Qualified Cost Report Table Name` 
-1. Share `Fully Qualified Insights Table Name for Pricing` 
-1. Share `Fully Qualified Insights Table Name for Recommendations` 
+1. Share `Billing Account ID`
+1. Share `Project ID hosting BigQuery Dataset`
+1. Share `BigQuery Dataset Name`
+1. Share `Fully Qualified Cost Report Table Name`
+1. Share `Fully Qualified Insights Table Name for Pricing`
+1. Share `Fully Qualified Insights Table Name for Recommendations`
 
 
 - For example: `po-billing-only.all_billing_dataset.gcp_billing_export_resource_v1_0127F7_2F14CC_1C4E4E`
@@ -148,3 +148,24 @@ PrimeOrbit needs <u>READ ONLY</u> access to System data (no private logs or prop
     - Table name: `gcp_billing_export_resource_v1_0127F7_2F14CC_1C4E4E`
     - Tip: The fully qualified table name will always include the word resource. If this is missing, please reconfirm your export type is Detailed usage cost data.
 - JSON Key file that was previously created during Service Account creation for `primeorbitsericeaccount`
+
+## Grant Access to Cloud Billing accounts to fetch associated Project Ids
+PrimeOrbit needs <u>READ ONLY</u> access to Billing Account to query Projects Ids.
+1. Log into the GCP Console.
+1. Change Scope to 'billing' level.
+1. Click on the Billing Account you want to manage.
+1. In the left sidebar, go to “Account Management”.
+1. Make sure you are in the right Billing Account level.
+1. Click on `+ Add principal`<br>
+1. Enter the 'Service Account' email address shared by PrimeOrbit or the one created above.
+1. In the Select a role dropdown, choose: the role `Billing Account Viewer` from `Billing` Category
+        <br>![alt text](./images/image-37.png)
+1. Click `SAVE`
+
+### Enable the Cloud Billing API:
+1. Go to the Google Cloud Console API Library.
+2. Search for "Cloud Billing API".
+3. Select "Cloud Billing API".
+4. Click "Enable".
+<br>![alt text](./images/image-38.png)
+This enables the API for your project, allowing you to use it in your code.
