@@ -153,7 +153,7 @@ PrimeOrbit needs <u>READ ONLY</u> access to System data (no private logs or prop
 PrimeOrbit needs **READ ONLY** access to Billing Account to query Projects Ids.
 1. Log into the GCP Console.
 1. Change Scope to 'billing' level.
-1. Click on the Billing Account you want to manage.
+1. Click on the billing account you want to manage.
 1. In the left sidebar, go to “Account Management”.
 1. Make sure you are in the right Billing Account level.
 1. Click on `+ Add principal`.
