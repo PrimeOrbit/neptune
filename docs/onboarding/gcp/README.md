@@ -155,7 +155,7 @@ PrimeOrbit needs **READ ONLY** access to Billing Account to query Projects Ids.
 1. Change Scope to 'billing' level.
 1. Click on the billing account you want to manage.
 1. In the left sidebar, go to “Account Management”.
-1. Make sure you are in the right Billing Account level.
+1. Make sure you are in the correct billing account level.
 1. Click on `+ Add principal`.
 1. Enter the *Service Account* email address shared by PrimeOrbit or the one created above.
 1. In the `Select A Role` dropdown, choose: the role `Billing Account Viewer` from `Billing` Category
