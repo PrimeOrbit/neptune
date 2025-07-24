@@ -32,4 +32,4 @@ permission to service principal.
 
    - **Azure AD Tenant ID**: You must provide your tenant ID.
 
-5. The script will assign reader permissions to subscription level
+> The script will assign reader permissions to subscription level
