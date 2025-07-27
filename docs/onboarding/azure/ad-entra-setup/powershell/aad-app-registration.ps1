@@ -16,7 +16,7 @@ function Validate-GUID {
     param (
         [string]$guidString
     )
-    
+
     if ($guidString -match "^[{]?[0-9a-fA-F]{8}[-]?[0-9a-fA-F]{4}[-]?[0-9a-fA-F]{4}[-]?[0-9a-fA-F]{4}[-]?[0-9a-fA-F]{12}[}]?$") {
         return $true
     } else {
@@ -38,7 +38,7 @@ while (-not $tenantIdValid) {
 $redirectUriValid = $false
 while (-not $redirectUriValid) {
     $redirectUri = "Read-Host -Prompt "Please enter the Redirect URI (e.g., "https://<yoursite>.primeorbit.io/login)"
-    
+
     # HTTPS check
     try {
         [System.Uri]$uriObject = $redirectUri
@@ -66,7 +66,7 @@ az rest --method PATCH --uri "https://graph.microsoft.com/v1.0/applications/$id"
 Write-Host "Creating Service Principal..." -ForegroundColor Blue
 $spId = az ad sp create --id $appId --query id -o tsv
 
-# Obtain ownership 
+# Obtain ownership
 Write-Host "Adding current user as app owner..." -ForegroundColor Blue
 $ownerId = az ad signed-in-user show --query id -o tsv
 az ad app owner add --id $appId --owner-object-id $ownerId
