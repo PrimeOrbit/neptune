@@ -12,6 +12,9 @@ Google Authentication is available for users who prefer Google-based sign-in.
 This method provides a quick and secure way to access PrimeOrbit without
 managing additional credentials.
 
+**Imporent:** While registering google auth app ensure `email` Claim is
+selected.
+
 # User Experience
 
 ![alt text](images/auth.png)
