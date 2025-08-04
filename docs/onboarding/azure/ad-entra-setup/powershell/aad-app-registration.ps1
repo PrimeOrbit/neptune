@@ -93,7 +93,6 @@ $optionalClaims = @{
   idToken = @(
     @{
       name = "email"
-      essential = $false
       additionalProperties = @()
     }
   )
