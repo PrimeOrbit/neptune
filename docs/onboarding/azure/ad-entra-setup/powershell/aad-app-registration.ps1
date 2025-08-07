@@ -87,6 +87,26 @@ az ad app permission admin-consent --id $appId
 Write-Host "Generating app credential..." -ForegroundColor Blue
 $password = az ad app credential reset --id $appId --append --end-date $endDate --query password -o tsv
 
+# Define the JSON in a PowerShell object
+Write-Host "Preparing optional claims JSON..." -ForegroundColor Blue
+$optionalClaims = @{
+  idToken = @(
+    @{
+      name = "email"
+      additionalProperties = @()
+    }
+  )
+}
+# Convert to JSON string and save to a file
+$claimsFile = "optional-claims.json"
+$optionalClaims | ConvertTo-Json -Depth 3 -Compress | Out-File -Encoding utf8 -FilePath $claimsFile
+
+# Update the Azure AD app with the claims file
+Write-Host "Updating AAD app with email claim in ID token..." -ForegroundColor Blue
+az ad app update --id $appId --optional-claims @$claimsFile
+# Clean up
+Remove-Item $claimsFile
+
 # Outputs
 Write-Host "   ---------------- OUTPUTS ----------------   " -BackgroundColor DarkBlue
 Write-Host "App Display Name: " -NoNewline
